@@ -9,4 +9,6 @@ const fetchServiceStatus = async () => {
   console.log("obtained services status: ", jsonStatus);
 };
 
+console.log("starting cron job");
 Deno.cron("check-status-validatos", "*/10 * * * *", fetchServiceStatus);
+console.log("cron job initialized");
